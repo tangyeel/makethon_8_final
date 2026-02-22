@@ -13,6 +13,7 @@ import SavedAnalysis from './pages/SavedAnalysis.jsx'
 import Settings from './pages/Settings.jsx'
 import HowToUse from './pages/HowToUse.jsx'
 import About from './pages/About.jsx'
+import CustomsChatbot from './components/CustomsChatbot.jsx'
 
 const Shell = ({ children, hideHeader, pageTitle, showNewAnalysis, onBack }) => (
   <div className="min-h-screen px-5 pb-16 sm:px-8 lg:px-12">
@@ -89,20 +90,25 @@ export default function App() {
   }, [])
 
   return (
-    <Shell hideHeader={hideHeader} pageTitle={pageTitle} showNewAnalysis={showNewAnalysis} onBack={handleBack}>
-      <Routes>
-        <Route path="/"               element={<Intro />} />
-        <Route path="/home"           element={<Home />} />
-        <Route path="/new"            element={<NewAnalysisChoice />} />
-        <Route path="/analysis"       element={<NewAnalysis />} />
-        <Route path="/image-analyzer" element={<ProductImageAnalyzer />} />
-        <Route path="/results"        element={<Results />} />
-        <Route path="/saved"          element={<SavedAnalysis />} />
-        <Route path="/settings"       element={<Settings />} />
-        <Route path="/how-to"         element={<HowToUse />} />
-        <Route path="/about"          element={<About />} />
-        <Route path="*"               element={<Navigate to="/" replace />} />
-      </Routes>
-    </Shell>
+    <>
+      <Shell hideHeader={hideHeader} pageTitle={pageTitle} showNewAnalysis={showNewAnalysis} onBack={handleBack}>
+        <Routes>
+          <Route path="/"               element={<Intro />} />
+          <Route path="/home"           element={<Home />} />
+          <Route path="/new"            element={<NewAnalysisChoice />} />
+          <Route path="/analysis"       element={<NewAnalysis />} />
+          <Route path="/image-analyzer" element={<ProductImageAnalyzer />} />
+          <Route path="/results"        element={<Results />} />
+          <Route path="/saved"          element={<SavedAnalysis />} />
+          <Route path="/settings"       element={<Settings />} />
+          <Route path="/how-to"         element={<HowToUse />} />
+          <Route path="/about"          element={<About />} />
+          <Route path="*"               element={<Navigate to="/" replace />} />
+        </Routes>
+      </Shell>
+
+      {/* Global Customs Chatbot — visible on all pages */}
+      <CustomsChatbot />
+    </>
   )
 }
