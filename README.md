@@ -55,7 +55,10 @@ Local Setup
     cd frontend
     npm install
     npm run dev
-    
+
+
+  add api key in GROQ_API_KEY in backend env file.
+  add VITE_GROQ_API_KEY in frontend env file for chatbot.
 
 
 Demo Flow (For Judges)
